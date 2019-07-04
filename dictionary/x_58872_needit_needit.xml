@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element audit="true" extends="task" label="Needit" max_length="40" name="x_58872_needit_needit" sizeclass="2" type="collection">
+    <element audit="true" extends="task" label="Needit" max_length="40" name="x_58872_needit_needit" sizeclass="3" type="collection">
         <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_other" type="string"/>
         <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Requested for email" mandatory="true" max_length="40" name="u_requested_for_email" type="string"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="choose" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
             <choice>
                 <element inactive_on_update="false" label="Choisir Une Valeur" sequence="0" value="choose"/>
+                <element inactive="true" inactive_on_update="true" label="Your Department Choice" sequence="0" value="your_choice"/>
                 <element inactive_on_update="false" label="Human Resources" sequence="1" value="hr"/>
                 <element inactive_on_update="false" label="Facilities" sequence="2" value="facilities"/>
                 <element inactive_on_update="false" label="Legal" sequence="3" value="legal"/>
-                <element inactive_on_update="false" label="Your Department Choice" sequence="4" value="your_choice"/>
             </choice>
         </element>
-        <element attributes="edge_encryption_enabled=true" choice="1" default="legal1" dependent="u_request_type" dependent_on_field="u_request_type" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string" use_dependent_field="true">
+        <element attributes="edge_encryption_enabled=true" choice="1" dependent="u_request_type" dependent_on_field="u_request_type" label="What needed" max_length="40" name="u_what_needed" type="string" use_dependent_field="true">
             <choice>
                 <element inactive_on_update="false" label="Choisir Une Valeur" sequence="0" value="choose"/>
                 <element inactive_on_update="false" label="Human Resources 1" sequence="1" value="hr1"/>
